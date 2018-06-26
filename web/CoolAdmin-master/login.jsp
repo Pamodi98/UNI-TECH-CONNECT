@@ -75,7 +75,7 @@
                             <div class="register-link">
                                 <p>
                                     Don't you have account?
-                                    <a href="#">Sign Up Here</a>
+                                    <a href="register.jsp">Request to register</a>
                                 </p>
                             </div>
                         </div>
