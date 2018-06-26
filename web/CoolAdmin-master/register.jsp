@@ -49,7 +49,7 @@
                         <div class="login-form">
                             <form action="" method="post">
                                 <div class="form-group">
-                                    <label>Username</label>
+                                    <label>Full Name</label>
                                     <input class="au-input au-input--full" type="text" name="username" placeholder="Username">
                                 </div>
                                 <div class="form-group">
@@ -57,28 +57,30 @@
                                     <input class="au-input au-input--full" type="email" name="email" placeholder="Email">
                                 </div>
                                 <div class="form-group">
-                                    <label>Password</label>
-                                    <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
+                                    <label>Phone No</label>
+                                    <input class="au-input au-input--full" type="text" name="contact" placeholder="Contact-No">
                                 </div>
-                                <div class="login-checkbox">
-                                    <label>
-                                        <input type="checkbox" name="aggree">Agree the terms and policy
-                                    </label>
+                              
+                                     <div class="form-group">
+                                               
+                                                    <label>Select Account Type</label>
+                                                
+                                                <div class="col-12 col-md-9">
+                                                    <select name="select" id="select" class="form-control">
+                                                        <option value="0">Standard User</option>
+                                                        <option value="1">University</option>
+                                                        <option value="2">Company</option>
+                                                        
+                                                    </select>
+                                                </div>
+                                            </div>
+                                  <div class="login-checkbox">
+                                    
                                 </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">register</button>
-                                <div class="social-login-content">
-                                    <div class="social-button">
-                                        <button class="au-btn au-btn--block au-btn--blue m-b-20">register with facebook</button>
-                                        <button class="au-btn au-btn--block au-btn--blue2">register with twitter</button>
-                                    </div>
-                                </div>
+                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">request to register</button>
+                                
                             </form>
-                            <div class="register-link">
-                                <p>
-                                    Already have account?
-                                    <a href="#">Sign In</a>
-                                </p>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>
