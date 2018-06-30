@@ -47,10 +47,10 @@
                             </a>
                         </div>
                         <div class="login-form">
-                            <form action="" method="post">
+                            <form action="registerprocess.jsp" method="post">
                                 <div class="form-group">
                                     <label>Full Name</label>
-                                    <input class="au-input au-input--full" type="text" name="username" placeholder="Username">
+                                    <input class="au-input au-input--full" type="text" name="fname" placeholder="Username">
                                 </div>
                                 <div class="form-group">
                                     <label>Email Address</label>
@@ -60,16 +60,20 @@
                                     <label>Phone No</label>
                                     <input class="au-input au-input--full" type="text" name="contact" placeholder="Contact-No">
                                 </div>
-                              
+                                <div class="form-group">
+                                    <label>Why do you want to join</label>
+                                    <input class="au-input au-input--full" type="text" name="des" placeholder="">
+                                </div>
+                               
                                      <div class="form-group">
                                                
                                                     <label>Select Account Type</label>
                                                 
                                                 <div class="col-12 col-md-9">
-                                                    <select name="select" id="select" class="form-control">
-                                                        <option value="0">Standard User</option>
-                                                        <option value="1">University</option>
-                                                        <option value="2">Company</option>
+                                                    <select name="user" id="select" class="form-control">
+                                                        <option value="Standard User">Standard User</option>
+                                                        <option value="University">University</option>
+                                                        <option value="Company">Company</option>
                                                         
                                                     </select>
                                                 </div>

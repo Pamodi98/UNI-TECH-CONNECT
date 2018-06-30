@@ -496,6 +496,7 @@
                                                 <th>Event Title</th>
                                                 <th>Date</th>
                                                 <th>description</th>
+                                                <th>Delete</th>
                                                 
                                             </tr>
                                         </thead>
@@ -514,6 +515,17 @@
                                               <td><%= rs.getString("title")%></td>
                                               <td><%= rs.getString("date")%></td>
                                               <td><%= rs.getString("description")%></td>
+                                               <td>
+                                                    <div class="table-data-feature">
+                                                        
+                                                        <a href="techcalanderdelete.jsp?id=<%=rs.getString("title") %>">
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                            <i class="zmdi zmdi-delete"></i></a>
+                                                        </button>
+                                                       
+                                                    </div>
+                                                </td>
+                                              
                                           </tr>
                                            
                                            
