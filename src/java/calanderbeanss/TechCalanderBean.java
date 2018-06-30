@@ -22,7 +22,12 @@ public class TechCalanderBean  implements Serializable{
     public TechCalanderBean(){
         
     }
-    
+    public TechCalanderBean(String title,String date,String description){
+        
+        setTitle(title);
+        setDate(date);
+        setDescription(description);
+    }
     
 
     public String getTitle() {
