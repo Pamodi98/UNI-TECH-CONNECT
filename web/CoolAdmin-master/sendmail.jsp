@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form action="" method="post" >
+        <form action="sendmailprocess.jsp" method="post" >
             <table border="1">
                 <% 
                 String email = request.getParameter("id");
