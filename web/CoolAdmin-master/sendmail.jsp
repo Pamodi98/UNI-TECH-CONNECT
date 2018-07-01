@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form action="${pageContext.request.contextPath}/SendMail" method="post" >
+        <form action="" method="post" >
             <table border="1">
                 <% 
                 String email = request.getParameter("id");
