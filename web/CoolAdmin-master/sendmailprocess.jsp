@@ -4,6 +4,7 @@
     Author     : wathm
 --%>
 
+<%@page import="java.sql.ResultSet"%>
 <%@page import="dbConnect.DbConnect"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -13,46 +14,20 @@
 <html>
     <body>
 <%
-
-    // adding to the login table
-    
-    
-    
-    
-    
-    
-    
     //Creating a result for getting status that messsage is delivered or not!
 
     String result;
 
     // Get recipient's email-ID, message & subject-line from index.html page
 
-    final String to = request.getParameter("email");
+    final String to = request.getParameter("id");
 
-    final String user = request.getParameter("user");
-
-    final String passw = request.getParameter("pass");
+  
     
     //save to login
     PreparedStatement pst;
-try{
-    Connection conn=DbConnect.ConnectDb();
-    String query="insert into login (user,pass) values(?,?)";
+    ResultSet rs;
     
-              pst=conn.prepareStatement(query);
-              pst.setString(1,user);
-              pst.setString(2,passw);
-              
-              pst.executeUpdate();
-             
-                 
-              
-
-    
-}catch(Exception e){
-    out.print(e);
-}
 
     
 
@@ -133,20 +108,45 @@ try{
         message.setSubject("here is your username and password");
 
         // Now set the actual message
+        
+        
+            
+try{
+    Connection conn=DbConnect.ConnectDb();
+    String query="select pass from login where user=?";
+    
+              pst=conn.prepareStatement(query);
+              pst.setString(1,to);
+              rs=pst.executeQuery();
+              while(rs.next()){
+            String password= rs.getString("pass");
+            
+               message.setText("username:"+to+ " password:"+password);
+              }
+              
 
-        message.setText("username:"+user+ " password:" +passw);
+    
+}catch(Exception e){
+    out.print(e);
+}
+
+
+       
 
         // Send message
 
         Transport.send(message);
 
         result = "Your mail sent successfully....";
+        RequestDispatcher rn = request.getRequestDispatcher("admin-index.jsp");
+        rn.forward(request, response);
 
     } catch (MessagingException mex) {
 
         mex.printStackTrace();
 
         result = "Error: unable to send mail....";
+       
 
     }
 

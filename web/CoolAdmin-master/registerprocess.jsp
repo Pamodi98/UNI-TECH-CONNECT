@@ -12,7 +12,7 @@
 RegisterBean rb = new RegisterBean(request.getParameter("fname"),request.getParameter("email"),request.getParameter("contact"),request.getParameter("des"),request.getParameter("user"));
 String fullname=rb.getFullname();
 String email=rb.getEmail();
-String contact = rb.getEmail();
+String contact = rb.getContact();
 String reason= rb.getReason();
 String type=rb.getType();
 
@@ -28,24 +28,28 @@ try{
               pst.setString(4,type);
               pst.setString(5,reason);
               pst.executeUpdate();
-              out.print("success");
+            
                  
-              
-
+    %>
     
+    <% 
+    RequestDispatcher rd = request.getRequestDispatcher("register.jsp");
+    rd.forward(request, response);
+    %>
+
+<%
 }catch(Exception e){
     out.print(e);
 }
 
-
-
-
-
-
-
-
-
-
-
-
 %>
+
+
+
+
+
+
+
+
+
+

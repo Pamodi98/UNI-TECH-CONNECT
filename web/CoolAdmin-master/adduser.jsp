@@ -1,3 +1,4 @@
+<%@page import="java.util.Random"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +11,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Login</title>
+    <title>Send Mail</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -47,17 +48,37 @@
                             </a>
                         </div>
                         <div class="login-form">
-                            <form action="${pageContext.request.contextPath}/Login" method="post">
+                            <form action="adduserprocess.jsp" method="post">
+                                  <% 
+                String username = request.getParameter("id");
+                Random rand = new Random();
+
+int  n = rand.nextInt(100000) + 1000;
+                %>
+                               
                                 <div class="form-group">
-                                    <label>Email Address</label>
-                                    <input class="au-input au-input--full" type="email" name="email" placeholder="Email">
+                                    <label>UserName</label>
+                                    <input class="au-input au-input--full" type="text" name="user" value="<%=username %>">
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
+                                    <input class="au-input au-input--full" type="password" name="pass" value="<%= n %>">
                                 </div>
-                              
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
+                                 <div class="form-group">
+                                               
+                                                    <label>Select Account Type</label>
+                                                
+                                                <div class="col-12 col-md-9">
+                                                    <select name="type" id="select" class="form-control">
+                                                        <option value="Standard User">Standard User</option>
+                                                        <option value="University">University</option>
+                                                        <option value="Company">Company</option>
+                                                        
+                                                    </select>
+                                                </div>
+                                            </div>
+                                
+                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">Send</button>
                               <!--  <div class="social-login-content">
                                     <div class="social-button">
                                         <button class="au-btn au-btn--block au-btn--blue m-b-20">sign in with facebook</button>
@@ -65,12 +86,7 @@
                                     </div> 
                                 </div>-->
                             </form>
-                            <div class="register-link">
-                                <p>
-                                    Don't you have account?
-                                    <a href="register.jsp">Request to register</a>
-                                </p>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>

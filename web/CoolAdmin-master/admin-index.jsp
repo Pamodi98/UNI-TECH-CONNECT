@@ -456,7 +456,7 @@
                                             <tr>
                                                 <th>fullname</th>
                                                 <th>email</th>
-                                                <th>contact-no</th>
+                                                <th>contact</th>
                                                 <th>type</th>
                                                 <th>description</th>
                                                 <th>options</th>
@@ -481,14 +481,19 @@
                                               <td><%= rs.getString("description")%></td>
                                                <td>
                                                     <div class="table-data-feature">
-                                                        <a href="sendmail.jsp?id=<%=rs.getString("email") %>">
+                                                        <a href="sendmailprocess.jsp?id=<%=rs.getString("email") %>">
                                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
                                                             <i class="zmdi zmdi-mail-send"></i>
                                                         </button></a>
                                                         
+                                                        <a href="adduser.jsp?id=<%=rs.getString("email")%>">  
+                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Add">
+                                                            <i class="zmdi zmdi-edit"></i>
+                                                            </button></a>
+                                                         <a href="deleterequest.jsp?id=<%=rs.getString("id")%>"> 
                                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                                             <i class="zmdi zmdi-delete"></i>
-                                                        </button>
+                                                        </button></a>
                                                         
                                                        
                                                     </div>
