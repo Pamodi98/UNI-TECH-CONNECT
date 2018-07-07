@@ -175,7 +175,7 @@
                                 <i class="fas fa-chart-bar"></i>Add News</a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="unii-change-pass.jsp">
                                 <i class="fas fa-table"></i>Change Password</a>
                         </li>
                         
@@ -322,7 +322,7 @@
                                             <img src="images/icon/avatar-01.jpg" alt="John Doe" />
                                         </div>
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">john doe</a>
+                                            <a class="js-acc-btn" href="#"><%=(String)session.getAttribute("user") %></a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
@@ -333,9 +333,9 @@
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#">john doe</a>
+                                                        <a href="#"><%=(String)session.getAttribute("user") %></a>
                                                     </h5>
-                                                    <span class="email">johndoe@example.com</span>
+                                                    <span class="email"><%=(String)session.getAttribute("user") %></span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">

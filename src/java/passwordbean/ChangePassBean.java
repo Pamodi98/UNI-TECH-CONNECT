@@ -13,9 +13,9 @@ import java.io.Serializable;
  */
 public class ChangePassBean implements Serializable{
     
-    String oldpass;
-    String newpass;
-    String conpass;
+   private String oldpass;
+   private String newpass;
+   private String conpass;
     
     public ChangePassBean(){
         

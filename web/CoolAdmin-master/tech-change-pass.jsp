@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>uni change pass</title>
+    <title>tech change pass</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -165,7 +165,7 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                       <li >
-                            <a href="uni-calander.jsp">
+                            <a href="tech-calander.jsp">
                                 <i class="fas fa-calendar-alt"></i>Add Event</a>
                         </li>
                         <li>
@@ -173,7 +173,7 @@
                                 <i class="fas fa-chart-bar"></i>Add News</a>
                         </li>
                         <li class="active">
-                            <a href="unii-change-pass.jsp">
+                            <a href="tech-change-pass.jsp">
                                 <i class="fas fa-table"></i>Change Password</a>
                         </li>
                         
@@ -320,7 +320,7 @@
                                             <img src="images/icon/avatar-01.jpg" alt="John Doe" />
                                         </div>
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">john doe</a>
+                                            <a class="js-acc-btn" href="#"><%=(String)session.getAttribute("user") %></a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
@@ -377,7 +377,7 @@
                                             <h3 class="text-center title-2">Change Password</h3>
                                         </div>
                                         <hr>
-                                          <form action="unichangepassprocess.jsp" method="post"  class="form-horizontal">
+                                          <form action="techchangepassprocess.jsp" method="post"  class="form-horizontal">
                                             <div class="row form-group">
                                                <!-- <div class="col col-md-3">
                                                     <label class=" form-control-label">Full Name</label>

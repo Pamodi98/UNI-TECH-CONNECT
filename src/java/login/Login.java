@@ -85,7 +85,7 @@ public class Login extends HttpServlet {
        String user = lb.getUser();
        String pass=lb.getPass();
        HttpSession session = request.getSession();
-       session.setAttribute("user",lb);
+       session.setAttribute("user",user);
         
       try{
            Connection con=DbConnect.ConnectDb();
