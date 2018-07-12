@@ -60,10 +60,12 @@
                                     <label>Phone No</label>
                                     <input class="au-input au-input--full" type="text" name="contact" placeholder="Contact-No">
                                 </div>
-                                <div class="form-group">
+                                 <div class="form-group">
                                     <label>Why do you want to join</label>
                                     <input class="au-input au-input--full" type="text" name="des" placeholder="">
                                 </div>
+                                
+                              
                                
                                      <div class="form-group">
                                                
@@ -78,13 +80,12 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                  <div class="login-checkbox">
-                                    
-                                </div>
+                                
+                                 
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">request to register</button>
                                 
                             </form>
-                           
+                   
                         </div>
                     </div>
                 </div>

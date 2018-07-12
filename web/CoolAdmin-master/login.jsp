@@ -49,8 +49,8 @@
                         <div class="login-form">
                             <form action="${pageContext.request.contextPath}/Login" method="post">
                                 <div class="form-group">
-                                    <label>Email Address</label>
-                                    <input class="au-input au-input--full" type="email" name="email" placeholder="Email">
+                                    <label>User Name</label>
+                                    <input class="au-input au-input--full" type="text" name="email" placeholder="Email">
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>

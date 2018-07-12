@@ -99,7 +99,7 @@ while(rs.next()){
        out.print(type);
        if("Standard User".equals(type)){
            
-              response.sendRedirect("CoolAdmin-master/admin-index.jsp");
+              response.sendRedirect("CoolAdmin-master/stuwebpage.jsp");
           
       } 
       else if("University".equals(type)){

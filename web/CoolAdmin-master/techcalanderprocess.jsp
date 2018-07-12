@@ -16,17 +16,20 @@
 String eventtitle = tcb.getTitle();
 String date = tcb.getDate();
 String description = tcb.getDescription();
+String user=(String)session.getAttribute("user");
+
 
 
   PreparedStatement pst;
  try{
               
               Connection conn = DbConnect.ConnectDb();
-              String query = "INSERT INTO techcalander (title,date,description) VALUES(?,?,?)";
+              String query = "INSERT INTO techcalander (title,date,description,user) VALUES(?,?,?,?)";
               pst=conn.prepareStatement(query);
               pst.setString(1,eventtitle);
               pst.setString(2,date);
               pst.setString(3,description);
+              pst.setString(4,user);
               
               
               pst.executeUpdate();

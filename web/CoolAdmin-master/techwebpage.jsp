@@ -14,7 +14,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Dashboard</title>
+    <title>TechWebPage</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -171,17 +171,24 @@
                     <img src="images/icon/logo.png" alt="Cool Admin" />
                 </a>
             </div>
-              <div class="menu-sidebar__content js-scrollbar1">
+                <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                      <li class="active" >
-                            <a href="admin-index.jsp">
-                                <i class="fas fa-calendar-alt"></i>Requests</a>
+                      <li>
+                            <a href="tech-calander.jsp">
+                                <i class="fas fa-calendar-alt"></i>Add Event</a>
                         </li>
-                        
-                        <li >
-                            <a href="admin-change-pass.jsp">
+                        <li>
+                            <a href="">
+                                <i class="fas fa-chart-bar"></i>Add News</a>
+                        </li>
+                        <li>
+                            <a href="tech-change-pass.jsp">
                                 <i class="fas fa-table"></i>Change Password</a>
+                        </li>
+                        <li class="active">
+                            <a href="techwebpage.jsp">
+                                <i class="fas fa-table"></i>Explore Events</a>
                         </li>
                         
                        
@@ -379,69 +386,137 @@
                     <div class="row m-t-30">
                             <div class="col-md-12">
                                 <!-- DATA TABLE-->
+                                <h1>Tech Events</h1><br>
                                 <div class="table-responsive m-b-40">
                                     <table class="table table-borderless table-data3">
                                         <thead>
                                             <tr>
-                                                <th>fullname</th>
-                                                <th>email</th>
-                                                <th>contact</th>
-                                                <th>type</th>
-                                                <th>description</th>
-                                                <th>options</th>
+                                                <th>Title</th>
+                                                <th>Date</th>
+                                                <th>Description</th>
+                                                <th>Posted by</th>
+                                                 <th>options</th>
+                                               
                                             </tr>
                                         </thead>
                                         <tbody>
                                               <%
                                    try{
                                        Connection conn = DbConnect.ConnectDb();
-                                       String query="select * from  requests";
+                                       String query="select * from  techcalander";
+                                    
                                        Statement st =conn.createStatement();
+                                      
                                        ResultSet rs = st.executeQuery(query);
+                                       
                                        while(rs.next()){
                                            
                                           %>
                                           
                                           <tr>
-                                              <td><%= rs.getString("fname")%></td>
-                                              <td><%= rs.getString("email")%></td>
-                                              <td><%= rs.getString("phoneno")%></td>
-                                              <td><%= rs.getString("type")%></td>
+                                              <td><%= rs.getString("title")%></td>
+                                              <td><%= rs.getString("date")%></td>
                                               <td><%= rs.getString("description")%></td>
+                                              <td><%= rs.getString("user")%></td>
+                                              
                                                <td>
-                                                    <div class="table-data-feature">
-                                                        <a href="sendmailprocess.jsp?id=<%=rs.getString("email") %>">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                            <i class="zmdi zmdi-mail-send"></i>
-                                                        </button></a>
+                                                     <div class="form-group">
+                                                     <div class="col-12 col-md-11">
+                                                    <select name="user" id="select" class="form-control">
+                                                        <option value="Going">Going</option>
+                                                        <option value="Not Going">Not going</option>
+                                                        <option value="Maybe">Maybe</option>
                                                         
-                                                        <a href="adduser.jsp?id=<%=rs.getString("email")%>">  
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Add">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                            </button></a>
-                                                         <a href="deleterequest.jsp?id=<%=rs.getString("id")%>"> 
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button></a>
-                                                        
-                                                       
-                                                    </div>
+                                                    </select>
+                                                </div>
+                                            </div>
                                                 </td>
                                               
                                           </tr>
                                            
                                            
                                           <% } %>
+                                      
                                           
                                         </tbody>
                                     </table>
                                                <%
                                             rs.close();
+                                            
                                              st.close();
+                                          
                                              conn.close();
                                        
                                    }catch(Exception e){
+                                       out.print(e);
+                                   }
+                           %>
+                                </div>
+                                <!-- END DATA TABLE-->
+                                <!-- DATA TABLE-->
+                                <h1>Uni Events</h1><br>
+                                <div class="table-responsive m-b-40">
+                                    <table class="table table-borderless table-data3">
+                                        <thead>
+                                            <tr>
+                                                <th>Title</th>
+                                                <th>Date</th>
+                                                <th>Description</th>
+                                                <th>Posted by</th>
+                                                 <th>options</th>
+                                               
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                              <%
+                                   try{
+                                       Connection conn = DbConnect.ConnectDb();
+                                       String query="select * from  unicalander";
+                                    
+                                       Statement st =conn.createStatement();
+                                      
+                                       ResultSet rs = st.executeQuery(query);
                                        
+                                       while(rs.next()){
+                                           
+                                          %>
+                                          
+                                          <tr>
+                                              <td><%= rs.getString("title")%></td>
+                                              <td><%= rs.getString("date")%></td>
+                                              <td><%= rs.getString("description")%></td>
+                                              <td><%= rs.getString("user")%></td>
+                                              
+                                               <td>
+                                                     <div class="form-group">
+                                                     <div class="col-12 col-md-10">
+                                                    <select name="user" id="select" class="form-control">
+                                                        <option value="Going">Going</option>
+                                                        <option value="Not Going">Not going</option>
+                                                        <option value="Maybe">Maybe</option>
+                                                        
+                                                    </select>
+                                                </div>
+                                            </div>
+                                                </td>
+                                              
+                                          </tr>
+                                           
+                                           
+                                          <% } %>
+                                      
+                                          
+                                        </tbody>
+                                    </table>
+                                               <%
+                                            rs.close();
+                                            
+                                             st.close();
+                                          
+                                             conn.close();
+                                       
+                                   }catch(Exception e){
+                                       out.print(e);
                                    }
                            %>
                                 </div>

@@ -18,7 +18,7 @@
     String user=(String)session.getAttribute("user");
     PreparedStatement pst,pst1;
     ResultSet rs;
-    out.print(newpass+conpass+user+oldpass);
+    //out.print(newpass+conpass+user+oldpass);
     Connection conn;
     conn=DbConnect.ConnectDb();
             
@@ -31,13 +31,15 @@
             rs=pst.executeQuery();
             
             if(rs.next() && (newpass == null ? conpass == null : newpass.equals(conpass))){
-                out.print(rs.getString("pass"));
+                //out.print(rs.getString("pass"));
                 String update="UPDATE login SET pass=? where user=? ";
                 pst1=conn.prepareStatement(update);
-                out.print(newpass);
+               // out.print(newpass);
                 pst1.setString(1,newpass);
                 pst1.setString(2,user);
                 pst1.executeUpdate();
+                RequestDispatcher rd = request.getRequestDispatcher("tech-calander.jsp");
+                rd.forward(request, response);
                 
                
             }else{

@@ -36,6 +36,12 @@
 </head>
 
 <body class="animsition">
+    <%
+        response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
+        if(session.getAttribute("user")==null){
+            response.sendRedirect("login.jsp");
+        }
+     %>
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
@@ -175,6 +181,10 @@
                         <li class="active">
                             <a href="tech-change-pass.jsp">
                                 <i class="fas fa-table"></i>Change Password</a>
+                        </li>
+                         <li >
+                            <a href="techwebpage.jsp">
+                                <i class="fas fa-table"></i>Explore Events</a>
                         </li>
                         
                        
@@ -351,7 +361,7 @@
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="#">
+                                                <a href="logout.jsp">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
                                             </div>
                                         </div>

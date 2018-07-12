@@ -15,6 +15,7 @@
 String eventtitle = ucb.getTitle();
 String date = ucb.getDate();
 String description = ucb.getDescription();
+String user=(String)session.getAttribute("user");
  
 
 
@@ -22,11 +23,12 @@ String description = ucb.getDescription();
  try{
               
               Connection conn = DbConnect.ConnectDb();
-              String query = "INSERT INTO unicalander (title,date,description) VALUES(?,?,?)";
+              String query = "INSERT INTO unicalander (title,date,description,user) VALUES(?,?,?,?)";
               pst=conn.prepareStatement(query);
               pst.setString(1,eventtitle);
               pst.setString(2,date);
               pst.setString(3,description);
+              pst.setString(4,user);
               
               
               pst.executeUpdate();
