@@ -12,8 +12,8 @@ import java.io.Serializable;
  * @author wathm
  */
 public class LoginBean implements Serializable {
-    String user;
-    String pass;
+    private String user;
+    private  String pass;
     
   public LoginBean(){
     

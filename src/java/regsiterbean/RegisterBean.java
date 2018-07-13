@@ -13,11 +13,11 @@ import java.io.Serializable;
  */
 public class RegisterBean implements Serializable
 {
-    String fullname;
-    String email;
-    String contact;
-    String reason;
-    String type;
+    private String fullname;
+    private String email;
+    private String contact;
+    private String reason;
+    private String type;
     
     public RegisterBean(){
         

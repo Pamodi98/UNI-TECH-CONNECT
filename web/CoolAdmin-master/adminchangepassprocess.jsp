@@ -38,7 +38,8 @@
                 pst1.setString(1,newpass);
                 pst1.setString(2,user);
                 pst1.executeUpdate();
-                
+                RequestDispatcher rd = request.getRequestDispatcher("admin-index.jsp");
+                rd.forward(request, response);
                
             }else{
                

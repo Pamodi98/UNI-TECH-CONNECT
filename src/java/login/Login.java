@@ -96,7 +96,7 @@ ResultSet rs=pst.executeQuery();
 
 while(rs.next()){
        String type=rs.getString("type");
-       out.print(type);
+      // out.print(type);
        if("Standard User".equals(type)){
            
               response.sendRedirect("CoolAdmin-master/stuwebpage.jsp");
@@ -118,9 +118,10 @@ while(rs.next()){
        }
        
 }
-
+response.sendRedirect("CoolAdmin-master/login.jsp");
            
        }catch(Exception e){
+           
            out.print(e);
        }
     }

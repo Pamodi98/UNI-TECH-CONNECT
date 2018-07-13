@@ -393,7 +393,9 @@
                                                 <th>Date</th>
                                                 <th>Description</th>
                                                 <th>Posted by</th>
-                                                 <th>options</th>
+                                                 <th>Going</th>
+                                                 <th>Maybe</th>
+                                                 <th>Not Going</th>
                                                
                                             </tr>
                                         </thead>
@@ -417,18 +419,29 @@
                                               <td><%= rs.getString("description")%></td>
                                               <td><%= rs.getString("user")%></td>
                                               
+                                    
+                                  
+                                   
+                                     
                                                <td>
-                                        <div class="form-group">
-                                                     <div class="col-12 col-md-11">
-                                                          
-                                                        <select name="status" id="select" class="form-control">
-                                                        <option value="Going">Going</option>
-                                                        <option value="Not Going">Not going</option>
-                                                        <option value="Maybe">Maybe</option>
+                                                   <a href="Confirm.jsp?id=<%= session.getAttribute("user") %>&id1=Going&id3=<%= rs.getString("title") %>">
+                                                   <button type="button" class="btn btn-success btn-sm">Going</button>
+                                                   </a>
+                                               </td>
+                                               <td>
+                                                   <a href="Confirm.jsp?id=<%= session.getAttribute("user") %>&id1=Maybe&id3=<%= rs.getString("title") %>">
+                                                   <button type="button" class="btn btn-warning btn-sm">MayBe</button>
+                                                   </a>
+                                               </td>
+                                               <td> 
+                                                   <a href="Confirm.jsp?id=<%= session.getAttribute("user") %>&id1=Not Going&id3=<%= rs.getString("title") %>">
+                                                   <button type="button" class="btn btn-danger btn-sm">Not going</button>
+                                                   </a>
+                                                   </td>
+                                
+                          
                                                         
-                                                             </select>
-                                            </div>
-                                                </td>
+                                              
                                               
                                           </tr>
                                            
@@ -461,7 +474,9 @@
                                                 <th>Date</th>
                                                 <th>Description</th>
                                                 <th>Posted by</th>
-                                                 <th>options</th>
+                                                 <th>Going</th>
+                                                 <th>Maybe</th>
+                                                 <th>Not Going</th>
                                                
                                             </tr>
                                         </thead>
@@ -485,18 +500,21 @@
                                               <td><%= rs.getString("description")%></td>
                                               <td><%= rs.getString("user")%></td>
                                               
+                                              <td>
+                                                  <a href="Confirm.jsp?id=<%= session.getAttribute("user") %>&id1=Going&id3=<%= rs.getString("title") %>">
+                                                  <button type="button" class="btn btn-success btn-sm">Going</button>
+                                                  </a>
+                                              </td>
                                                <td>
-                                                     <div class="form-group">
-                                                     <div class="col-12 col-md-12">
-                                                    <select name="user" id="select" class="form-control">
-                                                        <option value="Going">Going</option>
-                                                        <option value="Not Going">Not going</option>
-                                                        <option value="Maybe">Maybe</option>
-                                                        
-                                                    </select>
-                                                </div>
-                                            </div>
-                                                </td>
+                                                   <a href="Confirm.jsp?id=<%= session.getAttribute("user") %>&id1=Maybe&id3=<%= rs.getString("title") %>">
+                                                   <button type="button" class="btn btn-warning btn-sm">MayBe</button>
+                                                   </a>
+                                               </td>
+                                               <td> 
+                                                   <a href="Confirm.jsp?id=<%= session.getAttribute("user") %>&id1=Not Going&id3=<%= rs.getString("title") %>">
+                                                   <button type="button" class="btn btn-danger btn-sm">Not going</button>
+                                                   </a>
+                                               </td>
                                               
                                           </tr>
                                            

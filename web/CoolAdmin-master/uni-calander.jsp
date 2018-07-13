@@ -461,8 +461,8 @@
                                                         
                                                         <a href="unicalanderdelete.jsp?id=<%=rs.getString("title") %>">
                                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                            <i class="zmdi zmdi-delete"></i></a>
-                                                        </button>
+                                                            <i class="zmdi zmdi-delete"></i>
+                                                        </button><a/>
                                                        
                                                     </div>
                                                 </td>
