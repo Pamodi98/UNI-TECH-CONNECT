@@ -17,23 +17,24 @@ String event =request.getParameter("id3");
 try{
     
     Connection conn=DbConnect.ConnectDb();
-    PreparedStatement pst,pst1;
-   /* String query1="select * from confirm where user='"+user+"' and event='"+event+"'";
-    pst1=conn.prepareStatement(query1);
-    ResultSet rs = pst1.executeQuery();
+    PreparedStatement pst;
+    String query1="select * from confirm where user='"+user+"' and event='"+event+"'";
+    pst=conn.prepareStatement(query1);
+    ResultSet rs = pst.executeQuery();
    
-    while(rs.next()){
-        if(user==rs.getString("user")&& event==rs.getString("event")){
+    if(rs.next()){
+       
             String query2 ="update confirm set status=? where user=?";
             pst=conn.prepareStatement(query2);
             pst.setString(1,status);
             pst.setString(2,user);
             pst.executeUpdate();
-            out.print("success");
+              RequestDispatcher rd = request.getRequestDispatcher("stuwebpage.jsp");
+              rd.forward(request, response);
         }
         else
         {
-           */ 
+            
             
               String query = "INSERT INTO confirm (event,user,status) VALUES(?,?,?)";
               pst=conn.prepareStatement(query);
@@ -45,10 +46,10 @@ try{
               rd.forward(request, response);
             
 
-    /*
+    
         }
-    }  */
-}catch(Exception e){
+    }  
+catch(Exception e){
     out.print(e);
 }
 
