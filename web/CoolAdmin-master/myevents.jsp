@@ -14,7 +14,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Admin Index</title>
+    <title>My Events</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -175,14 +175,11 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                       <li class="active" >
-                            <a href="admin-index.jsp">
-                                <i class="fas fa-calendar-alt"></i>Requests</a>
+                            <a href="">
+                                <i class="fas fa-calendar-alt"></i>My Events </a>
                         </li>
                         
-                        <li >
-                            <a href="admin-change-pass.jsp">
-                                <i class="fas fa-table"></i>Change Password</a>
-                        </li>
+                      
                         
                        
                         
@@ -343,7 +340,7 @@
                                                     <span class="email"><%=(String)session.getAttribute("user") %></span>
                                                 </div>
                                             </div>
-                                          
+                                           
                                             <div class="account-dropdown__footer">
                                                 <a href="logout.jsp">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
@@ -365,25 +362,23 @@
                         
                     <div class="row m-t-30">
                             <div class="col-md-12">
-                                <!--  REQUEST DATA TABLE-->
+                                <!--  MY EVENTS DATA TABLE-->
                                 <div class="table-responsive m-b-40">
                                     <table class="table table-borderless table-data3">
                                         <thead>
                                             <tr>
-                                                <th>fullname</th>
-                                                <th>email</th>
-                                                <th>contact</th>
-                                                <th>type</th>
-                                                <th>description</th>
-                                                <th>options</th>
+                                                <th>Id</th>
+                                                <th>event</th>
+                                                <th>Status</th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <!--  READING DATA FROM DATATABLE REQUESTS -->
                                               <%
+                                                  String user= (String)session.getAttribute("user");
                                    try{
                                        Connection conn = DbConnect.ConnectDb();
-                                       String query="select * from  requests";
+                                       String query="select * from  confirm where user='"+user+"'";
                                        Statement st =conn.createStatement();
                                        ResultSet rs = st.executeQuery(query);
                                        while(rs.next()){
@@ -391,32 +386,10 @@
                                           %>
                                           
                                           <tr>
-                                              <td><%= rs.getString("fname")%></td>
-                                              <td><%= rs.getString("email")%></td>
-                                              <td><%= rs.getString("phoneno")%></td>
-                                              <td><%= rs.getString("type")%></td>
-                                              <td><%= rs.getString("description")%></td>
-                                               <td>
-                                                    <!--SEND EMAIL -->
-                                                    <div class="table-data-feature">
-                                                        <a href="sendmailprocess.jsp?id=<%=rs.getString("email") %>">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                            <i class="zmdi zmdi-mail-send"></i>
-                                                        </button></a>
-                                                      <!-- ADD USER -->   
-                                                        <a href="adduser.jsp?id=<%=rs.getString("email")%>">  
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Add">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                            </button></a>
-                                                     <!-- DELETE REQUEST -->
-                                                         <a href="deleterequest.jsp?id=<%=rs.getString("id")%>"> 
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button></a>
-                                                        
-                                                       
-                                                    </div>
-                                                </td>
+                                              <td><%= rs.getString("id")%></td>
+                                              <td><%= rs.getString("event")%></td>
+                                              <td><%= rs.getString("status")%></td>
+                                             
                                               
                                           </tr>
                                            

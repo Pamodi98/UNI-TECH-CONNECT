@@ -11,7 +11,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Send Mail</title>
+    <title>Add User</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -44,16 +44,19 @@
                     <div class="login-content">
                         <div class="login-logo">
                             <a href="#">
-                                <img src="images/icon/logo.png" alt="CoolAdmin">
+                                <img src="images/icon/logo1.png" alt="CoolAdmin">
                             </a>
                         </div>
                         <div class="login-form">
-                            <form action="adduserprocess.jsp" method="post">
+   <!-- adding user to the database. will be saved to the login table -->
+   
+   
+                  <form action="adduserprocess.jsp" method="post">
                                   <% 
                 String username = request.getParameter("id");
                 Random rand = new Random();
 
-int  n = rand.nextInt(100000) + 1000;
+               int  n = rand.nextInt(100000) + 1000;
                 %>
                                
                                 <div class="form-group">
@@ -79,13 +82,9 @@ int  n = rand.nextInt(100000) + 1000;
                                             </div>
                                 
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">Send</button>
-                              <!--  <div class="social-login-content">
-                                    <div class="social-button">
-                                        <button class="au-btn au-btn--block au-btn--blue m-b-20">sign in with facebook</button>
-                                        <button class="au-btn au-btn--block au-btn--blue2">sign in with twitter</button>
-                                    </div> 
-                                </div>-->
+                            
                             </form>
+                                   <!-- end of add user form -->
                            
                         </div>
                     </div>

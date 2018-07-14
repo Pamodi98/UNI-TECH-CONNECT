@@ -44,7 +44,8 @@
                     <div class="login-content">
                         <div class="login-logo">
                             <a href="#">
-                                <img src="images/icon/logo.png" alt="CoolAdmin">
+                                 <!-- LOGIN FORM -->
+                                <img src="images/icon/logo1.png" alt="CoolAdmin">
                             </a>
                         </div>
                         <div class="login-form">
@@ -59,12 +60,7 @@
                                 </div>
                               
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
-                              <!--  <div class="social-login-content">
-                                    <div class="social-button">
-                                        <button class="au-btn au-btn--block au-btn--blue m-b-20">sign in with facebook</button>
-                                        <button class="au-btn au-btn--block au-btn--blue2">sign in with twitter</button>
-                                    </div> 
-                                </div>-->
+                            
                             </form>
                             <div class="register-link">
                                 <p>

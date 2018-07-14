@@ -24,10 +24,11 @@ try{
    
     if(rs.next()){
        
-            String query2 ="update confirm set status=? where user=?";
+            String query2 ="update confirm set status=? where user=? and event=?";
             pst=conn.prepareStatement(query2);
             pst.setString(1,status);
             pst.setString(2,user);
+            pst.setString(3,event);
             pst.executeUpdate();
               RequestDispatcher rd = request.getRequestDispatcher("stuwebpage.jsp");
               rd.forward(request, response);

@@ -14,7 +14,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>StuWebPage</title>
+    <title>Student Web Page</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -52,7 +52,7 @@
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="index.html">
+                        <a class="logo" href="stuwebpage.jsp">
                             <img src="images/icon/logo.png" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
@@ -168,7 +168,7 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="images/icon/logo.png" alt="Cool Admin" />
+                    <img src="images/icon/logo1.png" alt="Cool Admin" />
                 </a>
             </div>
                 <div class="menu-sidebar__content js-scrollbar1">
@@ -180,7 +180,7 @@
                         </li>
                       
                         <li >
-                            <a href="">
+                            <a href="viewidea.jsp">
                                 <i class="fas fa-table"></i>Idea Hub</a>
                         </li>
                         <li>
@@ -329,7 +329,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                            <img src="images/icon/user.png" alt="John Doe" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#"><%=(String)session.getAttribute("user") %></a>
@@ -338,7 +338,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                                        <img src="images/icon/user.png" alt="John Doe" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
@@ -348,20 +348,7 @@
                                                     <span class="email"><%=(String)session.getAttribute("user") %></span>
                                                 </div>
                                             </div>
-                                            <div class="account-dropdown__body">
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
-                                                </div>
-                                            </div>
+                                       
                                             <div class="account-dropdown__footer">
                                                 <a href="logout.jsp">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
@@ -380,7 +367,10 @@
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
-                        
+                        <a href="myevents.jsp"> <button type="button" class="btn btn-primary">
+                                <i class="fa fa-star"></i>&nbsp; My Events</button> </a>
+
+
                     <div class="row m-t-30">
                             <div class="col-md-12">
                                 <!-- DATA TABLE-->
@@ -424,17 +414,17 @@
                                    
                                      
                                                <td>
-                                                   <a href="Confirm.jsp?id=<%= session.getAttribute("user") %>&id1=Going&id3=<%= rs.getString("title") %>">
+                                                   <a href="stuconfirm.jsp?id=<%= session.getAttribute("user") %>&id1=Going&id3=<%= rs.getString("title") %>">
                                                    <button type="button" class="btn btn-success btn-sm">Going</button>
                                                    </a>
                                                </td>
                                                <td>
-                                                   <a href="Confirm.jsp?id=<%= session.getAttribute("user") %>&id1=Maybe&id3=<%= rs.getString("title") %>">
+                                                   <a href="stuconfirm.jsp?id=<%= session.getAttribute("user") %>&id1=Maybe&id3=<%= rs.getString("title") %>">
                                                    <button type="button" class="btn btn-warning btn-sm">MayBe</button>
                                                    </a>
                                                </td>
                                                <td> 
-                                                   <a href="Confirm.jsp?id=<%= session.getAttribute("user") %>&id1=Not Going&id3=<%= rs.getString("title") %>">
+                                                   <a href="stuconfirm.jsp?id=<%= session.getAttribute("user") %>&id1=Not Going&id3=<%= rs.getString("title") %>">
                                                    <button type="button" class="btn btn-danger btn-sm">Not going</button>
                                                    </a>
                                                    </td>
@@ -501,17 +491,17 @@
                                               <td><%= rs.getString("user")%></td>
                                               
                                               <td>
-                                                  <a href="Confirm.jsp?id=<%= session.getAttribute("user") %>&id1=Going&id3=<%= rs.getString("title") %>">
+                                                  <a href="stuconfirm.jsp?id=<%= session.getAttribute("user") %>&id1=Going&id3=<%= rs.getString("title") %>">
                                                   <button type="button" class="btn btn-success btn-sm">Going</button>
                                                   </a>
                                               </td>
                                                <td>
-                                                   <a href="Confirm.jsp?id=<%= session.getAttribute("user") %>&id1=Maybe&id3=<%= rs.getString("title") %>">
+                                                   <a href="stuconfirm.jsp?id=<%= session.getAttribute("user") %>&id1=Maybe&id3=<%= rs.getString("title") %>">
                                                    <button type="button" class="btn btn-warning btn-sm">MayBe</button>
                                                    </a>
                                                </td>
                                                <td> 
-                                                   <a href="Confirm.jsp?id=<%= session.getAttribute("user") %>&id1=Not Going&id3=<%= rs.getString("title") %>">
+                                                   <a href="stuconfirm.jsp?id=<%= session.getAttribute("user") %>&id1=Not Going&id3=<%= rs.getString("title") %>">
                                                    <button type="button" class="btn btn-danger btn-sm">Not going</button>
                                                    </a>
                                                </td>

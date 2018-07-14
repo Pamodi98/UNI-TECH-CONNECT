@@ -46,7 +46,8 @@
                                 <img src="images/icon/logo.png" alt="CoolAdmin">
                             </a>
                         </div>
-                        <div class="login-form">
+                         <!-- REGISTER FORM -->
+                        <div class="form-horizontal">
                             <form action="registerprocess.jsp" method="post">
                                 <div class="form-group">
                                     <label>Full Name</label>
@@ -85,14 +86,13 @@
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">request to register</button>
                                 
                             </form>
-                   
+                        </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-    </div>
 
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.2.1.min.js"></script>

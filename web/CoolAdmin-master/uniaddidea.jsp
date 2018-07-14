@@ -3,14 +3,14 @@
 
 <head>
     <!-- Required meta tags-->
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="au theme template">
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>uni change pass</title>
+    <title>Idea Hub</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -48,8 +48,8 @@
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a  href="index.html">
-                            <img src="images/icon/logo.png" alt="" />
+                        <a class="logo" href="index.html">
+                            <img src="images/icon/logo.png" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -167,25 +167,16 @@
                     <img src="images/icon/logo1.png" alt="Cool Admin" />
                 </a>
             </div>
-           <div class="menu-sidebar__content js-scrollbar1">
+                <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                      <li >
-                            <a href="uni-calander.jsp">
-                                <i class="fas fa-calendar-alt"></i>Add Event</a>
-                        </li>
-                        <li>
+                     
+                        <li class="active">
                             <a href="uniaddidea.jsp">
                                 <i class="fas fa-chart-bar"></i>Idea Hub</a>
                         </li>
-                        <li class="active">
-                            <a href="unii-change-pass.jsp">
-                                <i class="fas fa-table"></i>Change Password</a>
-                        </li>
-                         <li>
-                            <a href="uniwebpage.jsp">
-                                <i class="fas fa-table"></i>Explore Events</a>
-                        </li>
+                        
+                         
                         
                        
                         
@@ -346,7 +337,7 @@
                                                     <span class="email"><%=(String)session.getAttribute("user") %></span>
                                                 </div>
                                             </div>
-                                           
+                                        
                                             <div class="account-dropdown__footer">
                                                 <a href="logout.jsp">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
@@ -368,13 +359,15 @@
                         <div class="row" style="margin-left:15vw;">
                             
                                 <div class="card">
-                                    <div class="card-header">Account Settings</div>
+                                    
+                                    <div class="card-header">Idea Hub</div>
                                     <div class="card-body">
                                         <div class="card-title">
-                                            <h3 class="text-center title-2">Change Password</h3>
+                                            <h3 class="text-center title-2">Add Blog/Article</h3>
                                         </div>
                                         <hr>
-                                          <form action="unichangepassprocess.jsp" method="post"  class="form-horizontal">
+                                        
+                                        <form action="ideahubprocess.jsp" method="post" >
                                             <div class="row form-group">
                                                <!-- <div class="col col-md-3">
                                                     <label class=" form-control-label">Full Name</label>
@@ -383,37 +376,41 @@
                                                     <p class="form-control-static">Username</p>
                                                 </div>-->
                                             </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="text-input" class=" form-control-label">Old Password</label>
+                                           
+                                              <div class="row form-group">
+                                                <div class="col col-md-5">
+                                                    <label for="text-input" class=" form-control-label">Subject</label>
                                                 </div>
-                                                <div class="col-12 col-md-9">
-                                                    <input type="password" id="text-input" name="old" placeholder="" class="form-control">
+                                                <div class="col-12 col-md-12">
+                                                    <input type="text" id="text-input" name="title" placeholder="" class="form-control">
                                                    
                                                 </div>
                                             </div>
-                                                 <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="text-input" class=" form-control-label">New Password</label>
+                                                
+                                              
+                                                              
+                                            <div class="row form-group">
+                                                <div class="col col-md-5">
+                                                    <label for="textarea-input" class=" form-control-label">Write your post</label>
                                                 </div>
-                                                <div class="col-12 col-md-9">
-                                                    <input type="password" id="text-input" name="new" placeholder="" class="form-control">
+                                                <div class="col-12 col-md-15">
+                                                    <textarea name="content" id="textarea-input" rows="11" placeholder="Content" class="form-control"></textarea>
+                                                </div>
+                                            </div> 
+                                                <div class="row form-group">
+                                                <div class="col col-md-5">
+                                                    <label for="text-input" class=" form-control-label">Posted by</label>
+                                                </div>
+                                                <div class="col-12 col-md-12">
+                                                    <input type="text" id="text-input" name="user" placeholder="" class="form-control" value="<%= (String)session.getAttribute("user")%>">
                                                    
                                                 </div>
-                                            </div>               
-                                             <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="text-input" class=" form-control-label">Confirm Password</label>
-                                                </div>
-                                                <div class="col-12 col-md-9">
-                                                    <input type="password" id="text-input" name="con" placeholder="" class="form-control">
-                                                   
-                                                </div>
-                                            </div>           
+                                            </div>
+                                                
                                                                       <div>
                                                 <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
                                                     <i class="fa fa-lock fa-lg"></i>&nbsp;
-                                                    <span id="payment-button-amount">Save Profile</span>
+                                                    <span id="payment-button-amount">Save Post</span>
                                                     <span id="payment-button-sending" style="display:none;">Sending…</span>
                                                 </button>
                                             </div>

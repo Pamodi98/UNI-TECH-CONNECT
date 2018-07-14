@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>stu change pass</title>
+    <title>student change pass</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -164,23 +164,23 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="images/icon/nsbm.png" alt="Cool Admin" />
+                    <img src="images/icon/logo1.png" alt="Cool Admin" />
                 </a>
             </div>
            <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                       <li >
-                            <a href="techwebpage.jsp">
+                            <a href="stuwebpage.jsp">
                                 <i class="fas fa-table"></i>Explore Events</a>
                         </li>
                         <li >
-                            <a href="">
+                            <a href="viewidea.jsp">
                                 <i class="fas fa-table"></i>Idea Hub</a>
                         </li>
                         
                         <li class="active">
-                            <a href="tech-change-pass.jsp">
+                            <a href="stu-change-pass.jsp">
                                 <i class="fas fa-table"></i>Change Password</a>
                         </li>
                         
@@ -325,7 +325,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                            <img src="images/icon/user.png" alt="John Doe" />
                                         </div>
                                         <div class="content">
                                             <a class="" href="#"><%=(String)session.getAttribute("user") %></a>
@@ -334,7 +334,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                                        <img src="images/icon/user.png" alt="John Doe" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
@@ -344,20 +344,7 @@
                                                     <span class="email"><%=(String)session.getAttribute("user") %></span>
                                                 </div>
                                             </div>
-                                            <div class="account-dropdown__body">
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
-                                                </div>
-                                            </div>
+                                           
                                             <div class="account-dropdown__footer">
                                                 <a href="logout.jsp">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>

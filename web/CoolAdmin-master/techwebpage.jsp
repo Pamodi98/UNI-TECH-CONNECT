@@ -14,7 +14,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>TechWebPage</title>
+    <title>Tech Web Page</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -168,7 +168,7 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="images/icon/logo.png" alt="Cool Admin" />
+                    <img src="images/icon/logo1.png" alt="Cool Admin" />
                 </a>
             </div>
                 <div class="menu-sidebar__content js-scrollbar1">
@@ -179,8 +179,8 @@
                                 <i class="fas fa-calendar-alt"></i>Add Event</a>
                         </li>
                         <li>
-                            <a href="">
-                                <i class="fas fa-chart-bar"></i>Add News</a>
+                            <a href="uniaddidea.jsp">
+                                <i class="fas fa-chart-bar"></i>Idea Hub</a>
                         </li>
                         <li>
                             <a href="tech-change-pass.jsp">
@@ -331,7 +331,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                            <img src="images/icon/user.png" alt="John Doe" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#"><%=(String)session.getAttribute("user") %></a>
@@ -340,7 +340,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                                        <img src="images/icon/user.png" alt="John Doe" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
@@ -350,20 +350,7 @@
                                                     <span class="email"><%=(String)session.getAttribute("user") %></span>
                                                 </div>
                                             </div>
-                                            <div class="account-dropdown__body">
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
-                                                </div>
-                                            </div>
+                                         
                                             <div class="account-dropdown__footer">
                                                 <a href="logout.jsp">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
@@ -382,6 +369,8 @@
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
+                        <a href="myevents.jsp"> <button type="button" class="btn btn-primary">
+                                <i class="fa fa-star"></i>&nbsp; My Events</button> </a>
                         
                     <div class="row m-t-30">
                             <div class="col-md-12">
@@ -395,7 +384,9 @@
                                                 <th>Date</th>
                                                 <th>Description</th>
                                                 <th>Posted by</th>
-                                                 <th>options</th>
+                                                <th>Going</th>
+                                                 <th>Maybe</th>
+                                                 <th>Not Going</th>
                                                
                                             </tr>
                                         </thead>
@@ -419,19 +410,21 @@
                                               <td><%= rs.getString("description")%></td>
                                               <td><%= rs.getString("user")%></td>
                                               
+                                             <td>
+                                                  <a href="techconfirm.jsp?id=<%= session.getAttribute("user") %>&id1=Going&id3=<%= rs.getString("title") %>">
+                                                  <button type="button" class="btn btn-success btn-sm">Going</button>
+                                                  </a>
+                                              </td>
                                                <td>
-                                                     <div class="form-group">
-                                                     <div class="col-12 col-md-11">
-                                                    <select name="user" id="select" class="form-control">
-                                                        <option value="Going">Going</option>
-                                                        <option value="Not Going">Not going</option>
-                                                        <option value="Maybe">Maybe</option>
-                                                        
-                                                    </select>
-                                                </div>
-                                            </div>
-                                                </td>
-                                              
+                                                   <a href="techconfirm.jsp?id=<%= session.getAttribute("user") %>&id1=Maybe&id3=<%= rs.getString("title") %>">
+                                                   <button type="button" class="btn btn-warning btn-sm">MayBe</button>
+                                                   </a>
+                                               </td>
+                                               <td> 
+                                                   <a href="techconfirm.jsp?id=<%= session.getAttribute("user") %>&id1=Not Going&id3=<%= rs.getString("title") %>">
+                                                   <button type="button" class="btn btn-danger btn-sm">Not going</button>
+                                                   </a>
+                                               </td>
                                           </tr>
                                            
                                            
@@ -463,7 +456,9 @@
                                                 <th>Date</th>
                                                 <th>Description</th>
                                                 <th>Posted by</th>
-                                                 <th>options</th>
+                                                <th>Going</th>
+                                                 <th>Maybe</th>
+                                                 <th>Not Going</th>
                                                
                                             </tr>
                                         </thead>
@@ -487,18 +482,21 @@
                                               <td><%= rs.getString("description")%></td>
                                               <td><%= rs.getString("user")%></td>
                                               
+                                             <td>
+                                                  <a href="techconfirm.jsp?id=<%= session.getAttribute("user") %>&id1=Going&id3=<%= rs.getString("title") %>">
+                                                  <button type="button" class="btn btn-success btn-sm">Going</button>
+                                                  </a>
+                                              </td>
                                                <td>
-                                                     <div class="form-group">
-                                                     <div class="col-12 col-md-10">
-                                                    <select name="user" id="select" class="form-control">
-                                                        <option value="Going">Going</option>
-                                                        <option value="Not Going">Not going</option>
-                                                        <option value="Maybe">Maybe</option>
-                                                        
-                                                    </select>
-                                                </div>
-                                            </div>
-                                                </td>
+                                                   <a href="techconfirm.jsp?id=<%= session.getAttribute("user") %>&id1=Maybe&id3=<%= rs.getString("title") %>">
+                                                   <button type="button" class="btn btn-warning btn-sm">MayBe</button>
+                                                   </a>
+                                               </td>
+                                               <td> 
+                                                   <a href="techconfirm.jsp?id=<%= session.getAttribute("user") %>&id1=Not Going&id3=<%= rs.getString("title") %>">
+                                                   <button type="button" class="btn btn-danger btn-sm">Not going</button>
+                                                   </a>
+                                               </td>
                                               
                                           </tr>
                                            
